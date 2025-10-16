@@ -298,7 +298,7 @@ This code is **FOR EDUCATIONAL REFERENCE ONLY**.
 
 ### 📚 Proper Usage:
 
-1. **Read assignment PDF first** (`docs/Workshop1-Assignment.pdf`)
+1. **Read assignment PDF first** (`docs/Workshop_01_AutomobileManagement.pdf`)
 2. **Attempt to build yourself** from scratch
 3. **When stuck** → Look at relevant code section
 4. **Understand the logic** → Close this code
@@ -332,7 +332,7 @@ Study this project to understand:
 
 ## 📖 Additional Resources
 
-- **Assignment PDF**: [`docs/Workshop1-Assignment.pdf`](docs/Workshop1-Assignment.pdf)
+- **Assignment PDF**: [`docs/Workshop_01_AutomobileManagement.pdf`](docs/Workshop_01_AutomobileManagement.pdf)
 - **SQL Script**: [`database/MyStock-Create.sql`](database/MyStock-Create.sql)
 - **Java EE Tutorial**: [Official Docs](https://javaee.github.io/tutorial/)
 - **JDBC Guide**: [Oracle JDBC](https://docs.oracle.com/javase/tutorial/jdbc/)
