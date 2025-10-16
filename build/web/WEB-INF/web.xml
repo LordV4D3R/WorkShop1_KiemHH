@@ -20,6 +20,10 @@
         <servlet-name>UpdateCarController</servlet-name>
         <servlet-class>controllers.UpdateCarController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteCarController</servlet-name>
+        <servlet-class>controllers.DeleteCarController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MainController</servlet-name>
         <url-pattern>/MainController</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>UpdateCarController</servlet-name>
         <url-pattern>/UpdateCarController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteCarController</servlet-name>
+        <url-pattern>/DeleteCarController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

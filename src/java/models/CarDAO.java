@@ -22,6 +22,7 @@ public class CarDAO {
     private static final String ADD_CAR = "INSERT INTO Cars(carID, carName, manufacturer, price, releasedYear) VALUES(?,?,?,?,?)";
     private static final String DETAIL_CAR = "SELECT carID, carName, manufacturer, price, releasedYear FROM Cars WHERE CarID = ?";
     private static final String UPDATE_CAR = "UPDATE Cars SET carName=?, manufacturer=?, price=?, releasedYear=? WHERE carID=?";
+    private static final String DELETE_CAR = "DELETE FROM Cars WHERE carID=?";
 
     public List<CarDTO> getAllCars() throws SQLException {
         List<CarDTO> list = new ArrayList<>();
@@ -152,6 +153,39 @@ public class CarDAO {
                 ptm.setInt(5, carID);
 
                 // Execute update
+                int rows = ptm.executeUpdate();
+                if (rows > 0) {
+                    result = true;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (ptm != null) {
+                ptm.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
+        }
+
+        return result;
+    }
+
+    public boolean deleteCar(int carID) throws SQLException {
+        boolean result = false;
+        Connection conn = null;
+        PreparedStatement ptm = null;
+
+        try {
+            conn = DBUtils.getConnection();
+            if (conn != null) {
+                ptm = conn.prepareStatement(DELETE_CAR);
+
+                // Chỉ cần set carID cho WHERE clause
+                ptm.setInt(1, carID);
+
+                // Execute delete
                 int rows = ptm.executeUpdate();
                 if (rows > 0) {
                     result = true;

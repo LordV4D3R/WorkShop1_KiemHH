@@ -5,6 +5,7 @@
 package controllers;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,9 +14,9 @@ import models.CarDAO;
 
 /**
  *
- * @author Vader
+ * @author tranq
  */
-public class AddCarController extends HttpServlet {
+public class DeleteCarController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -26,31 +27,41 @@ public class AddCarController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    private static final String ADD_CAR_PAGE = "add_new_car.jsp";
+    private static final String CAR_DELETE_PAGE = "car_delete.jsp";
+    private static final String CAR_MANAGEMENT_CONTROLLER = "LoadCarController";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String url = ADD_CAR_PAGE;
+        String url = CAR_DELETE_PAGE;
+
         try {
-            CarDAO carDAO = new CarDAO();
-            int carID = Integer.parseInt(request.getParameter("CarIDCreate"));
-            String carName = request.getParameter("CarNameCreate");
-            String manufacturer = request.getParameter("ManufacturerCreate");
-            double price = Double.parseDouble(request.getParameter("PriceCreate"));
-            int releasedYear = Integer.parseInt(request.getParameter("ReleasedYearCreate"));
 
-            boolean result = carDAO.addCar(carID, carName, manufacturer, price, releasedYear);
+            String carIDString = request.getParameter("CarID");
 
-            if (result) {
-                request.setAttribute("ADD_SUCCESS_MESSAGE", "Thêm xe thành công");
+            if (carIDString != null && !carIDString.isEmpty()) {
+                int carID = Integer.parseInt(carIDString);
+
+                CarDAO dao = new CarDAO();
+                boolean result = dao.deleteCar(carID);
+
+                if (result) {
+                    request.setAttribute("DELETE_MESSAGE", "Xóa xe thành công!");
+                    url = CAR_MANAGEMENT_CONTROLLER;
+                } else {
+                    request.setAttribute("DELETE_MESSAGE", "Không thể xóa xe. Xe không tồn tại!");
+                }
             } else {
-                request.setAttribute("ADD_SUCCESS_MESSAGE", "Thêm xe thất bại");
-                
+                request.setAttribute("DELETE_MESSAGE", "Không tìm thấy ID xe!");
             }
+
+        } catch (NumberFormatException e) {
+            log("Invalid CarID format: " + e.toString());
+            request.setAttribute("ERROR", "ID xe không hợp lệ!");
         } catch (Exception e) {
-            log("Error at LoadCarController: " + e.toString());
+            log("Error at DeleteCarController: " + e.toString());
             e.printStackTrace();
+            request.setAttribute("ERROR", "Lỗi hệ thống khi xóa xe!");
         } finally {
             request.getRequestDispatcher(url).forward(request, response);
         }

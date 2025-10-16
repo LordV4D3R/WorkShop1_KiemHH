@@ -30,6 +30,7 @@ public class CarDetailController extends HttpServlet {
      */
     private static final String CAR_DETAIL_PAGE = "car_detail.jsp";
     private static final String CAR_UPDATE_PAGE = "car_update.jsp";
+    private static final String CAR_DELETE_PAGE = "car_delete.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -42,6 +43,8 @@ public class CarDetailController extends HttpServlet {
                 url = CAR_UPDATE_PAGE;
             } else if (action.equals("Detail")) {
                 url = CAR_DETAIL_PAGE;
+            } else if (action.equals("Delete")) {
+                url = CAR_DELETE_PAGE;
             }
             CarDAO carDetail = new CarDAO();
             int carID = Integer.parseInt(request.getParameter("CarID"));

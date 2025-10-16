@@ -13,13 +13,12 @@
     </head>
     <body>
         <form action="MainController" method="POST">
-            CarId ${CAR_DETAILS.carID}<br/>
-            CarName ${CAR_DETAILS.carName}<br/>
-            Manufacturer ${CAR_DETAILS.manufacturer}<br/>
-            Price ${CAR_DETAILS.price}<br/>
-            ReleasedYear ${CAR_DETAILS.releasedYear}<br/>
+            <div><strong style="display:inline-block; width:150px;">Car ID:</strong> ${CAR_DETAILS.carID}</div>
+            <div><strong style="display:inline-block; width:150px;">Car Name:</strong> ${CAR_DETAILS.carName}</div>
+            <div><strong style="display:inline-block; width:150px;">Manufacturer:</strong> ${CAR_DETAILS.manufacturer}</div>
+            <div><strong style="display:inline-block; width:150px;">Price:</strong> $${CAR_DETAILS.price}</div>
+            <div><strong style="display:inline-block; width:150px;">Released Year:</strong> ${CAR_DETAILS.releasedYear}</div>
             <input type="submit" value="Edit" name="action" />
-            <input type="reset" value="Reset" />
             <input type="submit" value="Back to List" name="action" />
         </form>
     </body>

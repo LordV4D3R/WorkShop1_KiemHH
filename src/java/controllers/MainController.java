@@ -29,6 +29,8 @@ public class MainController extends HttpServlet {
     private static final String CAR_PAGE = "LoadCarController";
     private static final String CAR_DETAIL_PAGE = "CarDetailController";
     private static final String CAR_UPDATE_PAGE = "UpdateCarController";
+    private static final String CAR_DELETE_PAGE = "DeleteCarController";
+    private static final String CAR_CREATE_PAGE = "AddCarController";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -36,12 +38,16 @@ public class MainController extends HttpServlet {
         String url = CAR_PAGE;
         try {
             String action = request.getParameter("action");
-            if (action == null || action.isEmpty()) {
+            if (action == null || action.isEmpty() || action.equals("Back to List")) {
                 url = CAR_PAGE;
-            } else if (action.equals("Detail") || action.equals("Update")) {
+            } else if (action.equals("Detail") || action.equals("Update") || action.equals("Delete")) {
                 url = CAR_DETAIL_PAGE;
-            } else if (action.equals("Update Car")) {
+            } else if (action.equals("Save")) {
                 url = CAR_UPDATE_PAGE;
+            } else if (action.equals("Delete ")) {
+                url = CAR_DELETE_PAGE;
+            } else if (action.equals("Create New")) {
+                url = CAR_CREATE_PAGE;
             }
         } catch (Exception e) {
             log("Error at MainController: " + e.toString());

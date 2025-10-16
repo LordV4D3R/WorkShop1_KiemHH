@@ -12,14 +12,16 @@
         <title>Add Car Page</title>
     </head>
     <body>
+        <h1>Add New Car</h1>
         <form action="MainController " method="POST">
-            CarID <input type="text" name="txtUsername" value="" /><br/>
-            Car Name <input type="text" name="txtUsername" value="" /><br/>
-            Manufacturer <input type="text" name="txtUsername" value="" /><br/>
-            Price <input type="text" name="txtUsername" value="" /><br/>
-            Released Year <input type="text" name="txtUsername" value="" /><br/>
-            <input type="submit" value="Add New Car" name="btAction" />
+            CarID <input type="text" name="CarIDCreate" value="" /><br/>
+            Car Name <input type="text" name="CarNameCreate" value="" /><br/>
+            Manufacturer <input type="text" name="ManufacturerCreate" value="" /><br/>
+            Price <input type="text" name="PriceCreate" value="" /><br/>
+            Released Year <input type="text" name="ReleasedYearCreate" value="" /><br/>
+            <input type="submit" value="Create New" name="action" />
             <input type="submit" value="Reset" />  
+            <input type="submit" value="Back to List" name="action" />
             ${ADD_SUCCESS_MESSAGE}
         </form>
 

@@ -10,10 +10,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Car Page</title>
     </head>
     <body>
-        <h3>Product List - Using EL and JSTL</h3>
+        <h3>Car List - Using EL and JSTL</h3>
+        <form action="MainController" method="POST">
+            <input type="submit" value="Create New" name="action"/>
+        </form>
         <table border="1">
             <tr>
                 <th>No</th>
@@ -37,10 +40,13 @@
                             <input type="hidden" name="CarID" value="${car.carID}"/>
                             <input type="submit" value="Detail" name="action"/>
                             <input type="submit" value="Update" name="action"/>
+                            <input type="submit" value="Delete" name="action"/>
                         </form>
                     </td>
                 </tr>
             </c:forEach>
         </table>
+                    ${DELETE_MESSAGE}
+
     </body>
 </html>
