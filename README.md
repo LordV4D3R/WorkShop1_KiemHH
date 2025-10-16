@@ -14,7 +14,7 @@ A Java Web Application demonstrating CRUD operations with JSP, Servlet, and SQL 
 
 The complete workshop requirements, database schema, and UI mockups are in:
 
-📁 **[`docs/Workshop1-Assignment.pdf`](docs/Workshop1-Assignment.pdf)**
+📁 **[`docs/Workshop_01_AutomobileManagement.pdf`](docs/Workshop_01_AutomobileManagement.pdf)**
 
 This document contains:
 - ✅ Detailed requirements and objectives
@@ -71,7 +71,7 @@ Install these before running the project:
 
 ### Step 1: Clone Repository
 ```bash
-git clone https://github.com/your-username/workshop1-automobile-management.git
+git clone https://github.com/LordV4D3R/WorkShop1_KiemHH.git
 cd workshop1-automobile-management
 ```
 
@@ -342,15 +342,15 @@ Study this project to understand:
 
 ## 👨‍💻 Credits
 
-**Created by:** MindyCoding by Tran
+**Created by:** MindyCoding by TranAn aka Forty3
 
 **Purpose:** Educational sample for teaching Java Web Development
 
 **Institution:** FPT University - Java Web Development Course
 
-**Contact:** [Your Email/Contact]
+**Contact:** antran4work@gmail.com
 
-**Repository:** [GitHub Link]
+**Repository:** https://github.com/LordV4D3R/WorkShop1_KiemHH.git
 
 ---
 
