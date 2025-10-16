@@ -1,0 +1,45 @@
+# NetBeans specific
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# NetBeans profiler
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+
+# Tomcat
+.catalina.base
+.catalina.home
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Database (if you have local config files)
+# Uncomment if needed:
+# src/java/utils/DBUtils.java
